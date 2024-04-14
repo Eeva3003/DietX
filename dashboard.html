@@ -1,0 +1,267 @@
+- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <style>
+      .card-title {
+  color: #262626;
+  font-size: 1.5em;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.small-desc {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #452c2c;
+}
+
+.small-desc {
+  font-size: 1em;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #6293c8, #384c6c);
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card {
+  display: block;
+  position: relative;
+  max-width: 300px;
+  max-height: 320px;
+  background-color: #f2f8f9;
+  border-radius: 10px;
+  padding: 2em 1.2em;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: linear-gradient(135deg, #364a60, #384c6c);
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+  transform: scale(28);
+}
+
+.card:hover .small-desc {
+  transition: all 0.5s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+  transition: all 0.5s ease-out;
+  color: #ffffff;
+}
+
+          body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* slight grey background */
+            display: flex;
+            justify-content: center; /* center horizontally */
+            min-height: 100vh;
+        }
+
+        .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* reduced width */
+    max-width: 1200px; /* maximum width */
+    position: fixed;
+    top: 3rem; /* margin from top */
+    margin-top: 0.0rem; /* margin from top */
+    z-index: 1000; /* Ensure the navbar stays on top */
+}
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background-color: #eee;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+
+          .fatherContainer {
+    border-radius: 30px;
+    background: #4d4d8f;
+    box-shadow:  35px 35px 70px #41417a,
+             -35px -35px 70px #5959a4;
+    padding: 20px;
+    margin-top: 160px; /* Adjusted margin-top to match the height of the navbar */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="DietX Logo">
+        <h1>DietX</h1>
+    </div>
+    <div class="navbar-links">
+        <a href="/welcomePage">Home</a>
+        <a href="/nutrition">Nutrition Chart</a>
+        <a href="/about">About Us</a>
+    </div>
+    <a href="/" class="login-button">Try AI</a>
+</nav>
+<div class="fatherContainer">
+<div class="container">
+
+    <div class="row justify-content-center">
+ <div class="card">
+      <p class="card-title">Chai</p>
+      <p class="small-desc">
+        Chai is a flavorful beverage made from black tea, milk, and spices like cinnamon, cardamom, and ginger. It provides antioxidants from the black tea, calcium and protein from the milk, and various vitamins and minerals from the spices.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+      <div class="container">
+    <div class="row justify-content-center">
+ <div class="card">
+      <p class="card-title">Chai</p>
+      <p class="small-desc">
+        Chai is a flavorful beverage made from black tea, milk, and spices like cinnamon, cardamom, and ginger. It provides antioxidants from the black tea, calcium and protein from the milk, and various vitamins and minerals from the spices.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+ <div class="container">
+    <div class="row justify-content-center">
+ <div class="card">
+      <p class="card-title">Chai</p>
+      <p class="small-desc">
+        Chai is a flavorful beverage made from black tea, milk, and spices like cinnamon, cardamom, and ginger. It provides antioxidants from the black tea, calcium and protein from the milk, and various vitamins and minerals from the spices.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+      <div class="container">
+    <div class="row justify-content-center">
+ <div class="card">
+      <p class="card-title">Chai</p>
+      <p class="small-desc">
+        Chai is a flavorful beverage made from black tea, milk, and spices like cinnamon, cardamom, and ginger. It provides antioxidants from the black tea, calcium and protein from the milk, and various vitamins and minerals from the spices.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+      <div class="container">
+    <div class="row justify-content-center">
+ <div class="card">
+      <p class="card-title">Chai</p>
+      <p class="small-desc">
+        Chai is a flavorful beverage made from black tea, milk, and spices like cinnamon, cardamom, and ginger. It provides antioxidants from the black tea, calcium and protein from the milk, and various vitamins and minerals from the spices.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
