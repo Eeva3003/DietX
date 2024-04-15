@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
       <style>
+          @keyframes changeBackground {
+            0% { background: linear-gradient(to bottom, #c0c0ff, #77aaff); }
+            50% { background: linear-gradient(to bottom, #77aaff, #c0c0ff); }
+            100% { background: linear-gradient(to bottom, #c0c0ff, #77aaff); }
+        }
       .card-title {
   color: #262626;
   font-size: 1.5em;
@@ -96,6 +101,7 @@
             display: flex;
             justify-content: center; /* center horizontally */
             min-height: 100vh;
+             animation: changeBackground 10s infinite alternate;
         }
 
         .navbar {
@@ -165,7 +171,7 @@
 
           .fatherContainer {
     border-radius: 30px;
-    background: #4d4d8f;
+    background: black;
     box-shadow:  35px 35px 70px #41417a,
              -35px -35px 70px #5959a4;
     padding: 20px;
@@ -173,7 +179,64 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
+        }
+         .patient-id {
+    font-weight: bold;
+    text-align: center;
+             flex-grow: 1; 
+   
 }
+.patient-name{
+    font-weight: bold;
+   text-align: center;
+    margin-bottom: 10px; 
+     flex-grow: 1; 
+}
+         left-info {
+    text-align: left;
+}
+
+.patient-name {
+    
+}
+
+.fatherContainer {
+    border-radius: 30px;
+    background: #4d4d8f;
+    box-shadow: 35px 35px 70px #41417a, -35px -35px 70px #5959a4;
+    padding: 20px;
+    margin-top: 200px; /* Adjusted margin-top to add space */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}.patient-id {
+    font-weight: bold;
+    color: white;
+    background-color: #0A043C;
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    padding: 5px 10px; /* Add padding for spacing */
+}
+
+
+.patient-details {
+   
+    position:fixed;
+    top: 140px; /* Adjusted top value to add space */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #000000; /* Add a border around the patient details */
+    border-radius: 20px; /* Add border-radius for rounded corners */
+    background-color: #ffffff;
+    width: 90%; /* reduced width */
+    max-width: 1200px; /* maximum width */
+    z-index: 1000; /* Ensure the details stay on top */
+}
+
 
     </style>
 </head>
@@ -190,6 +253,22 @@
     </div>
     <a href="/" class="login-button">Try AI</a>
 </nav>
+   <div class="patient-details">
+    <div class="patient-info">
+       <p class="patient-id">Patient ID: XXXXXXXX</p>
+        <p class ="patient-name">Patient Name: John Doe</p>
+        <div class="left-info">
+            <p>Height: 180 cm</p>
+            <p>Weight: 75 kg</p>
+            <p>Sex: Male</p>
+        </div>
+        
+    </div>
+    <img src="patient_photo.jpg" alt="Patient Photo">
+</div>
+
+    
+
 <div class="fatherContainer">
 <div class="container">
 
